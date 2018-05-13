@@ -4,4 +4,9 @@ type cashsvr_exec, exec_type, vendor_file_type, file_type;
 allow cashsvr cashsvr_socket:dir rw_dir_perms;
 allow cashsvr cashsvr_socket:sock_file create_file_perms;
 
+allow cashsvr input_device:dir search;
+allow cashsvr self:capability dac_override;
+allow cashsvr sysfs:file read;
+allow cashsvr sysfs_msm_subsys:dir search;
+
 init_daemon_domain(cashsvr)
